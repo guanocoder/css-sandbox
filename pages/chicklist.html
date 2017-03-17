@@ -1,0 +1,10 @@
+<section ng-repeat="chick in chicks" class="content-block">
+    <div>
+        <a href="#" class="figure">
+            <img src="{{chick.img}}" alt="{{chick.name}}" />
+        </a>
+        <h1>{{chick.fullName}}</h1>
+        <p>{{chick.description}}</p>
+        <a href="{{chick.url}}">Learn More</a>
+    </div>
+</section>

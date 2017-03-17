@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Alicia",
+        "fullName": "Alicia Silverstone",
+        "img": "img/alicia-silverstone.jpg",
+        "description": null,
+        "url": "#"
+    },
+    {
+        "name": "Emily",
+        "fullName": "Emily Blunt",
+        "img": "img/emily-blunt.jpg",
+        "description": null,
+        "url": "#"
+    },
+    {
+        "name": "Emma",
+        "fullName": "Emma Stone",
+        "img": "img/emma-stone.jpg",
+        "description": null,
+        "url": "#"
+    },
+    {
+        "name": "Jennifer",
+        "fullName": "Jennifer Love Hewitt",
+        "img": "img/jennifer-love-hewitt.jpg",
+        "description": null,
+        "url": "#"
+    },
+    {
+        "name": "Kate",
+        "fullName": "Kate Hudson",
+        "img": "img/kate-hudson.jpg",
+        "description": null,
+        "url": "#"
+    },
+    {
+        "name": "Michelle",
+        "fullName": "Michelle Yeoh",
+        "img": "img/michelle-yeoh.jpg",
+        "description": null,
+        "url": "#"
+    },
+    {
+        "name": "Olivia",
+        "fullName": "Olivia Wilde",
+        "img": "img/olivia-wilde.jpg",
+        "description": null,
+        "url": "#"
+    },
+    {
+        "name": "Tilda",
+        "fullName": "Tilda Swinston",
+        "img": "img/tilda-swinston.jpg",
+        "description": null,
+        "url": "#"
+    },    
+    {
+        "name": "Zoe",
+        "fullName": "Zoe Soldaña",
+        "img": "img/zoe-soldana.jpg",
+        "description": null,
+        "url": "#"
+    }
+]
