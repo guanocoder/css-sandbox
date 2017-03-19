@@ -36,9 +36,9 @@ app.get('/api/chicks', (request, response) => {
 });
 
 // serves ngResource.save() request
-app.post('/api/chicks', (request, response) => {
+app.post('/api/chicks/:name', (request, response) => {
     let newChick = {
-        name: request.body.name,
+        name: request.params.name,
         fullName: request.body.fullName,
         img: request.body.img,
         description: request.body.description,
@@ -61,8 +61,8 @@ app.post('/api/chicks', (request, response) => {
 });
 
 // serves ngResource.get('/api/chicks/:name') request
-app.get('/api/chicks/*', (request, response) => {
-    let name = request.url.replace('/api/chicks/', '');
+app.get('/api/chicks/:name', (request, response) => {
+    let name = request.params.name;
     let chickFound = false;
     chicks.forEach((chick) => {
         if(chick.name.toLowerCase() == name.toLowerCase()) {
