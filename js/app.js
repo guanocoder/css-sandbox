@@ -12,7 +12,11 @@ chicklistApp.config(function($routeProvider) {
 
 // service
 chicklistApp.service('chickService', ['$resource', function($resource) {
-    return $resource('/api/chicks/:name')
+    return $resource('/api/chicks/:name', { name: '@name'}, {
+        update: {
+            method: 'PUT'
+        }
+    })
 }]);
 
 // controller
