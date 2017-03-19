@@ -119,6 +119,25 @@ app.put('/api/chicks/:name', (request, response) => {
     response.end();
 });
 
+// serves ngResource.delete() request
+app.delete('/api/chicks/:name', (request, response) => {
+    let name = request.params.name;
+    let chickFound = false;
+    for(let i = 0; i < chicks.length; i++) {
+        if(chicks[i].name.toLowerCase() == name.toLowerCase()) {
+            chickFound = true;
+            chicks.splice(i, 1); // remove from array
+            response.statusCode = 204; // OK (no content)
+            break;
+        }
+    }
+    if(!chickFound) {
+        response.statusCode = 404;
+    }
+    response.end();
+});
+
+
 app.use(express.static('.'));
 app.get('*', (request, response) => {
     response.sendFile(path.join(__dirname, './index.html'));

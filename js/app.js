@@ -31,10 +31,13 @@ chicklistApp.service('chickService', ['$resource', function($resource) {
 // controllers
 chicklistApp.controller('listController', ['$scope', '$location', 'chickService', function($scope, $location, chickService) {
 
+    function loadChicks() {
+        chickService.query(function(data) {
+            $scope.chicks = data;
+        });
+    }
 
-    chickService.query(function(data) {
-        $scope.chicks = data;
-    });
+    loadChicks();
 
     $scope.createChick = function() {
         $location.path('create');
@@ -42,6 +45,14 @@ chicklistApp.controller('listController', ['$scope', '$location', 'chickService'
 
     $scope.updateChick = function(name) {
         $location.path('update').search({name: name});
+    }
+
+    $scope.deleteChick = function(name) {
+        chickService.get({name: name}, function(chick) {
+            chick.$delete(function() {
+                loadChicks();
+            });
+        });
     }
 }]);
 
