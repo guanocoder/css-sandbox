@@ -111,6 +111,7 @@ app.put('/api/chicks/:name', (request, response) => {
             chickFound = true;
             chicks[i] = updatedChick;
             response.statusCode = 204;
+            break;
         }
     }
     if(!chickFound) {
