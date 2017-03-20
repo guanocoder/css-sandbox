@@ -5,6 +5,10 @@ var chicklistApp = angular.module('chicklistApp', ['ngRoute', 'ngResource']);
 chicklistApp.config(function($routeProvider) {
     $routeProvider
     .when('/', {
+        templateUrl: 'pages/chicklist.html',
+        controller: 'listController'
+    })
+    .when('/grid', {
         templateUrl: 'pages/chickgrid.html',
         controller: 'listController'
     })
