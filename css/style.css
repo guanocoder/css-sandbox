@@ -1,3 +1,39 @@
+.grouping:before,
+.grouping:after {
+    content: " ";
+    display: table;
+}
+.grouping:after {
+    clear: both;
+}
+
+
+.wrapper {
+    margin: auto;
+    width: 960px;
+}
+
+.clear {
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 300px;
+    height: 400px;
+    margin-left: 30px;
+}
+
+.p-box {
+    overflow: hidden;
+    height: 348px;
+}
+
+.column:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+
 .content-block {
     padding: 20px 6px;
 }
@@ -8,7 +44,7 @@
 }
 
 .content-block h1 {
-    font-size: 38pt;
+    font-size: 24pt;
     /*color: #fff;*/
     margin-bottom: 10px;
 }
