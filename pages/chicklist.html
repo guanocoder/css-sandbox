@@ -1,6 +1,6 @@
 <!--<button ng-click="createChick()">Create New</button>-->
-<section class="content-block">
-    <div ng-repeat="chick in chicks">
+<section class="content-block list">
+    <div ng-repeat="chick in chicks" class="grouping">
         <div class="p-box">
             <a href="#" class="figure">
                 <img ng-src="{{chick.img}}" alt="{{chick.name}}" />
