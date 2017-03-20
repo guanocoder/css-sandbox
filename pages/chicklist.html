@@ -9,9 +9,9 @@
                 <h1>{{chick.fullName}}</h1>
                 <p class="paragraph">{{chick.description}}</p>
             </div>
-            <a ng-href="{{chick.url}}">Learn More</a>
-            <!--<button ng-click="updateChick(chick.name)">Edit</button>-->
-            <!--<button ng-click="deleteChick(chick.name)">Delete</button>-->
+            <!--<a ng-href="{{chick.url}}" class="button">Learn More »</a>-->
+            <a ng-click="updateChick(chick.name)" class="button">Edit »</a>
+            <a ng-click="deleteChick(chick.name)" class="button">Delete »</a>
         </div>
     </div>
     <!-- A way to fix collapsing section because of the float elements inside -->
