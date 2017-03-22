@@ -76,5 +76,6 @@
 }
 
 .list .button {
+    width: 15%;
     float: right;
 }
