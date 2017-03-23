@@ -65,7 +65,7 @@
 
 .content-block img:hover {
     position: absolute;
-    transform: scale(2.1,2.1);
+    transform: scale(2.1,2.1) translate(26px,30px);
 }
 
 /*********** BUTTONS ***********/
