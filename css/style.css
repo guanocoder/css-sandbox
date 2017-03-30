@@ -127,7 +127,7 @@ Go Premium
 .go-premium {
     width: 300px;
     float: left;
-    margin-top: 200px;
+    margin-top: 175px;
 }
 
 .call-to-action {
@@ -178,6 +178,7 @@ nav {
     right: 0;
     top: 0;
     z-index: 1000;
+    min-width: 766px;
 }
 
 nav figure {
