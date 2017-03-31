@@ -79,3 +79,13 @@ chicklistApp.controller('updateController', ['$scope', '$routeParams', '$locatio
         });
     }
 }]);
+
+chicklistApp.controller('menuController', ['$scope', 'chickService', function($scope, chickService) {
+    function loadChicks() {
+        chickService.query(function(data) {
+            $scope.chicks = data;
+        });
+    }
+
+    loadChicks();
+}]);
