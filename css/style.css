@@ -226,3 +226,30 @@ nav li a:active {
     background-color: #eb2428;
     color: #fff;
 }
+
+/***********************
+DROP DOWN MENU
+************************/
+
+.has-submenu ul {
+    /*display: block;*/
+    position: absolute;
+    top: 66px;
+    background-color: #fff;
+    border-bottom: 1px solid #ada791;
+    border-left: 1px solid #ada791;
+    border-right: 1px solid #ada791;
+    width: 150px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    display: none;
+}
+
+.has-submenu:hover ul {
+    display: block;
+}
+
+.has-submenu li > a {
+    display: block;
+    padding: 20px 0 20px 0;
+}
