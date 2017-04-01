@@ -23,7 +23,7 @@ chicklistApp.config(function($routeProvider) {
 })
 
 // service
-chicklistApp.service('chickService', ['$resource', function($resource) {
+chicklistApp.service('chickResource', ['$resource', function($resource) {
     return $resource('/api/chicks/:name', { name: '@name'}, {
         update: {
             method: 'PUT'
@@ -32,16 +32,94 @@ chicklistApp.service('chickService', ['$resource', function($resource) {
 }]);
 
 
+chicklistApp.factory('chickService', ['$q', 'chickResource', function($q, chickResource) {
+
+    let chicks = [];
+
+    reloadChicks();
+
+    function all() {
+        return chicks;
+    }
+
+    function reloadChicks() {
+        chicks.length = 0; // Clear array without losing reference because its being $watched by angular
+        return loadChicks().then(function(data) {
+            data.forEach(chick => {
+                chicks.push(chick);
+            });
+        });
+    }
+    
+    function loadChicks() {
+        let deferred = $q.defer();
+         chickResource.query(function(chicks) {
+             deferred.resolve(chicks);
+         }, function(error) {
+             deferred.reject(error);
+         });
+        return deferred.promise;
+    }
+
+    function get(name) {
+        let deferred = $q.defer();
+        chickResource.get({ name: name }, function(chick) {
+            deferred.resolve(chick);
+        }, function(error) {
+            deferred.reject(error);
+        })
+        return deferred.promise;
+    };
+
+    function add(chick) {
+        let deferred = $q.defer();
+        chick.$save(function () {
+            deferred.resolve();
+        }, function(error) {
+            deferred.reject(error);
+        })
+        // update chicks
+        return deferred.promise.then(reloadChicks);
+    };
+
+    function update(chick) {
+        let deferred = $q.defer();
+        chick.$update(function () {
+            deferred.resolve();
+        }, function(error) {
+            deferred.reject(error);
+        })
+        // update chicks
+        return deferred.promise.then(reloadChicks);
+    };
+
+    function remove(chick) {
+        let deferred = $q.defer();
+        chick.$delete(function () {
+            deferred.resolve();
+        }, function(error) {
+            deferred.reject(error);
+        })
+        // update chicks
+        return deferred.promise.then(reloadChicks);
+    };
+
+    return {
+        Chick: chickResource, // Chick contructor reference
+        all: all,
+        get: get,
+        add: add,
+        update: update,
+        remove: remove
+    };
+
+}]);
+
+
 // controllers
 chicklistApp.controller('listController', ['$scope', '$location', 'chickService', function($scope, $location, chickService) {
 
-    function loadChicks() {
-        chickService.query(function(data) {
-            $scope.chicks = data;
-        });
-    }
-
-    loadChicks();
+    $scope.chicks = chickService.all();
 
     $scope.createChick = function() {
         $location.path('create');
@@ -52,40 +130,35 @@ chicklistApp.controller('listController', ['$scope', '$location', 'chickService'
     }
 
     $scope.deleteChick = function(name) {
-        chickService.get({name: name}, function(chick) {
-            chick.$delete(function() {
-                loadChicks();
-            });
+        chickService.get(name).then(chick => {
+            chickService.remove(chick);
         });
     }
 }]);
 
 chicklistApp.controller('createController', ['$scope', '$location', 'chickService', function($scope, $location, chickService) {
-    $scope.chick = new chickService();
+    $scope.chick = new chickService.Chick();
 
     $scope.chickCreate = function() {
-        $scope.chick.$save(function() {
+        chickService.add($scope.chick).then(() => {
             $location.path('/'); // goto chick list when done
         });
     }
 }]);
 
 chicklistApp.controller('updateController', ['$scope', '$routeParams', '$location', 'chickService', function($scope, $routeParams, $location, chickService) {
-    $scope.chick = chickService.get({name: $routeParams.name});
+    //$scope.chick = chickService.get($routeParams.name);
+    chickService.get($routeParams.name).then((chick) => {
+        $scope.chick = chick;
+    });
 
     $scope.chickUpdate = function() {
-        $scope.chick.$update(function() {
+        chickService.update($scope.chick).then(() => {
             $location.path('/'); // goto chick list when done
         });
     }
 }]);
 
 chicklistApp.controller('menuController', ['$scope', 'chickService', function($scope, chickService) {
-    function loadChicks() {
-        chickService.query(function(data) {
-            $scope.chicks = data;
-        });
-    }
-
-    loadChicks();
+    $scope.chicks = chickService.all();
 }]);

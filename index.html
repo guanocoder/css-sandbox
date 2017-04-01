@@ -21,14 +21,14 @@
     </figure>
     <ul class="primary-nav grouping" ng-controller="menuController">
         <li><a >Home</a></li>
-        <li><a >Movies</a></li>
         <li class="has-submenu">
-            <a >Chicks</a>
+            <a >Edit</a>
             <ul>
-                <li ng-repeat="chick in chicks"><a>{{chick.name}}</a></li>
+                <li ng-repeat="chick in chicks"><a ng-href="#/update?name={{chick.name}}">{{chick.name}}</a></li>
             </ul>
         </li>
-        <li><a >Chum</a></li>
+        <li><a href="#/">List</a></li>
+        <li><a href="#/grid">Grid</a></li>
     </ul>
 </nav>
 
@@ -41,7 +41,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium nostrum molestiae consequatur, quis, pariatur ratione. Recusandae voluptatem fugiat in vero. At maiores nam libero eveniet odit qui, aliquid. Dicta, vel, laudantium.</p>
             </div>
             <div class="go-premium">
-                <a class="call-to-action">Go Premium</a>
+                <a class="call-to-action" href="#/create">Create new</a>
                 <p>So many awesome features when you go premium. <a href="#">Learn more &raquo;</a></p>
             </div>
         </div>        
