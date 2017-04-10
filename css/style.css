@@ -185,6 +185,26 @@ nav figure {
     position: absolute;
     bottom: -70px;
     left: 0px;
+    animation-name: sharkDive;
+    animation-duration: 2.3s;
+    animation-timing-function: ease;
+}
+
+@keyframes sharkDive {
+    0% {
+        transform: translate(90%,70%);
+        opacity: 0;
+    }
+    33% {
+        transform: translate(40%, 20%) rotate(-90deg);
+    }
+    66% {
+        transform: translate(10%, 50%) rotate(-181deg);
+    }
+    100% {
+        transform: translate(0%);
+        opacity: 1;
+    }
 }
 
 nav img {
