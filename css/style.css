@@ -50,6 +50,13 @@ body {
 .content-block figure {
     margin: 0 10px;
     float: left;
+    width: 40%;
+    min-width: 60px;
+}
+
+.content-block.list figure {
+    min-width: 100px;
+    max-width: 12%;
 }
 
 .content-block h1 {
@@ -64,13 +71,12 @@ body {
 
 .content-block img {
     padding-top: 10px;
-    height: 140px;
+    max-width: 100%;
     transition: 0.1s all ease-out;
     transform: scale(1,1);
 }
 
 .content-block img:hover {
-    position: absolute;
     transform: scale(2.1,2.1) translate(26px,30px);
 }
 
