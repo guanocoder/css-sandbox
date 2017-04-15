@@ -47,7 +47,7 @@ body {
     padding: 20px 6px;
 }
 
-.content-block .figure {
+.content-block figure {
     margin: 0 10px;
     float: left;
 }
@@ -185,6 +185,7 @@ nav {
 }
 
 nav figure {
+    width: 160px;
     position: absolute;
     bottom: -70px;
     left: 0px;
@@ -211,7 +212,7 @@ nav figure {
 }
 
 nav img {
-    width: 160px;
+    max-width: 100%;
 }
 
 .primary-nav {
