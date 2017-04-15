@@ -1,18 +1,16 @@
 <!--<button ng-click="createChick()">Create New</button>-->
-<div class="content-block grouping">
-    <div class="wrapper">
-        <div ng-repeat="chick in chicks" class="column">
-            <div class="p-box">
-                <a href="#" class="figure">
-                    <img ng-src="{{chick.img}}" alt="{{chick.name}}" />
-                </a>
-                <h1>{{chick.fullName}}</h1>
-                <p class="paragraph">{{chick.description}}</p>
-            </div>
-            <!--<a ng-href="{{chick.url}}" class="button">Learn More »</a>-->
-            <a ng-click="updateChick(chick.name)" class="button">Edit »</a>
-            <a ng-click="deleteChick(chick.name)" class="button">Delete »</a>
+<div class="content-block grouping wrapper">
+    <div ng-repeat="chick in chicks" class="column">
+        <div class="p-box">
+            <a href="#" class="figure">
+                <img ng-src="{{chick.img}}" alt="{{chick.name}}" />
+            </a>
+            <h1>{{chick.fullName}}</h1>
+            <p class="paragraph">{{chick.description}}</p>
         </div>
+        <!--<a ng-href="{{chick.url}}" class="button">Learn More »</a>-->
+        <a ng-click="updateChick(chick.name)" class="button">Edit »</a>
+        <a ng-click="deleteChick(chick.name)" class="button">Delete »</a>
     </div>
     <!-- A way to fix collapsing section because of the float elements inside -->
     <!--<div class="clear"></div>-->
