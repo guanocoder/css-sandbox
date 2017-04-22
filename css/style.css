@@ -303,3 +303,24 @@ DROP DOWN MENU
     display: block;
     padding: 20px 0 20px 0;
 }
+
+
+/*******************************
+MEDIA QUERIES
+*******************************/
+@media screen and (max-width: 719px) {
+    .intro-content {
+        float: none;
+        width: auto;
+    }
+    .go-premium {
+        float: none;
+        width: auto;
+        margin-top: 10px;
+    }
+    .column {
+        float: none;
+        width: auto;
+        margin-left: 0px;
+    }
+}
