@@ -257,6 +257,25 @@ nav li a:active {
     color: #fff;
 }
 
+.mobile-menu-icon {
+    display: none;
+    width: 30px;
+    height: 26px;
+    float: right;
+    margin: 10px 15px 10px 0;
+    cursor: pointer;
+}
+
+.mobile-menu-icon::before {
+    content: "☰";
+    font-size: 160%;
+}
+
+.mobile-menu-icon.open::before {
+    content: '✖';
+}
+
+
 /***********************
 DROP DOWN MENU
 ************************/
@@ -338,6 +357,13 @@ MEDIA QUERIES */
 
     .primary-nav {
         width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: all ease-in-out .35s;
+    }
+
+    .primary-nav.active {
+        max-height: 100vh;
     }
 
     .primary-nav li {
@@ -379,6 +405,10 @@ MEDIA QUERIES */
     .has-submenu:hover ul {
         -webkit-animation: none;
         animation: none;
+    }
+
+    .mobile-menu-icon {
+        display: inherit;
     }
 }
 

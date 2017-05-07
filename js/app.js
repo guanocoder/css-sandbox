@@ -161,4 +161,9 @@ chicklistApp.controller('updateController', ['$scope', '$routeParams', '$locatio
 
 chicklistApp.controller('menuController', ['$scope', 'chickService', function($scope, chickService) {
     $scope.chicks = chickService.all();
+    $scope.menuIsHidden = true;
+
+    $scope.toggleMenu = function() {
+        $scope.menuIsHidden = !$scope.menuIsHidden;
+    }
 }]);

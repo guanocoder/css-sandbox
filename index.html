@@ -15,11 +15,12 @@
 <body>
 
 <!-- Menu -->
-<nav class="grouping">
+<nav class="grouping" ng-controller="menuController">
     <figure>
         <img src="img/bruce.png" alt="Me name is Bruce" />
     </figure>
-    <ul class="primary-nav grouping" ng-controller="menuController">
+    <div class="mobile-menu-icon" ng-class="{'open':!menuIsHidden}"  ng-click="toggleMenu()"></div>
+    <ul class="primary-nav grouping" ng-class="{'active':!menuIsHidden}">
         <li><a >Home</a></li>
         <li class="has-submenu">
             <a >Edit</a>
