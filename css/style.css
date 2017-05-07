@@ -186,7 +186,7 @@ nav {
     right: 0;
     top: 0;
     z-index: 1000;
-    min-width: 766px;
+    min-width: 720px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
 }
 
@@ -306,8 +306,8 @@ DROP DOWN MENU
 
 
 /*******************************
-MEDIA QUERIES
-*******************************/
+MEDIA QUERIES */
+
 @media screen and (max-width: 719px) {
     .intro-content {
         float: none;
@@ -324,3 +324,62 @@ MEDIA QUERIES
         margin-left: 0px;
     }
 }
+
+@media screen and (max-width: 719px) {
+    nav {
+        min-width: initial;
+        position: static;
+    }
+
+    nav figure {
+        bottom: initial;
+        top: -28px;
+    }
+
+    .primary-nav {
+        width: 100%;
+    }
+
+    .primary-nav li {
+        float: right;
+        width: 100%;
+        padding-right: 25px;
+    }
+
+    .primary-nav li a {
+        text-align: right;
+        padding: 15px 35px 15px 0;
+        padding-right: 25px;
+        width: 100%;
+        border-bottom: 1px solid #e7e7e7;
+        border-left: none;
+        font-size: 13px;
+    }
+
+    .primary-nav > li.has-submenu {
+        padding-right: 0;
+    }
+
+    .primary-nav > li.has-submenu > a {
+        display: none;
+    }
+
+    .primary-nav > li.has-submenu ul {
+        padding-top: unset;
+    }
+
+    .has-submenu ul {
+        position: static;
+        display: block;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .has-submenu:hover ul {
+        -webkit-animation: none;
+        animation: none;
+    }
+}
+
+/*******************************/
