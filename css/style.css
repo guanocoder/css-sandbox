@@ -413,3 +413,17 @@ MEDIA QUERIES */
 }
 
 /*******************************/
+
+
+/*******************************
+Fonts */
+
+@font-face {
+    font-family: 'My-Custom-Font';
+    src: ('../fonts/League-Gothic-Regular.otf');
+}
+
+h1, h2 {
+    font-family: 'My-Custom-Font', Arial, Helvetica, sans-serif;
+}
+/*******************************/
