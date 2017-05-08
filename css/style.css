@@ -440,3 +440,49 @@ h1, h2, p {
     font-family: 'Goudy-Bookletter-1911', Arial, Helvetica, sans-serif;
 }
 /*******************************/
+
+footer ul {
+    float: left;
+    margin: 0 100px 50px 0;
+}
+
+footer .list-heading {
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 17px;
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+}
+
+footer a {
+    color: #333;
+}
+
+footer li, footer p {
+    color: #4d4d4d;
+    line-height: 10px;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+footer .icon {
+    margin-right: 10px;
+    font-size: 30px;
+    transition: .25s color ease-in-out;
+}
+
+footer a:hover .icon {
+    color:#c00;
+}
+
+a {
+    color: darkorange;
+    font-family: 'Maven Pro'
+}
+
+.legal-copy {
+    text-align: right;
+    font-size: 14px;
+}
