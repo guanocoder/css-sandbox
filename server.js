@@ -139,9 +139,9 @@ app.delete('/api/chicks/:name', (request, response) => {
 });
 
 
-app.use(express.static('.'));
+app.use(express.static('./www'));
 app.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, './index.html'));
+    response.sendFile(path.join(__dirname, './www/index.html'));
 });
 
 app.listen(8080, () => {
